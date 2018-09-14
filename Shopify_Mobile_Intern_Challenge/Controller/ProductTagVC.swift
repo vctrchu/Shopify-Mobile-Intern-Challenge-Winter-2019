@@ -36,7 +36,6 @@ class ProductTagVC: UIViewController {
                             let tags = product["tags"] as! String
                             let productTitle = product["title"] as! String
                             var inventoryCount = 0
-                            print(tags)
                             
                             let variants = product["variants"] as! Array <Dictionary <String, Any>>
                             for variant in variants {
