@@ -11,6 +11,7 @@
 		FB940C0B214A099C00DE6EF8 /* TagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB940C0A214A099C00DE6EF8 /* TagCell.swift */; };
 		FB940C0D214A13D300DE6EF8 /* ProductTagVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB940C0C214A13D300DE6EF8 /* ProductTagVC.swift */; };
 		FBB28624214AFAA800F722C1 /* ProductTagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB28623214AFAA800F722C1 /* ProductTagCell.swift */; };
+		FBB28626214B653E00F722C1 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB28625214B653E00F722C1 /* Product.swift */; };
 		FBE6DD33214A044000ED7872 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE6DD32214A044000ED7872 /* AppDelegate.swift */; };
 		FBE6DD35214A044000ED7872 /* TagVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE6DD34214A044000ED7872 /* TagVC.swift */; };
 		FBE6DD38214A044000ED7872 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBE6DD36214A044000ED7872 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 		FB940C0A214A099C00DE6EF8 /* TagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCell.swift; sourceTree = "<group>"; };
 		FB940C0C214A13D300DE6EF8 /* ProductTagVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTagVC.swift; sourceTree = "<group>"; };
 		FBB28623214AFAA800F722C1 /* ProductTagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTagCell.swift; sourceTree = "<group>"; };
+		FBB28625214B653E00F722C1 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		FBE6DD2F214A044000ED7872 /* Shopify_Mobile_Intern_Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shopify_Mobile_Intern_Challenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBE6DD32214A044000ED7872 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBE6DD34214A044000ED7872 /* TagVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagVC.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 		FB940C06214A08DD00DE6EF8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FBB28625214B653E00F722C1 /* Product.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBB28626214B653E00F722C1 /* Product.swift in Sources */,
 				FBE6DD35214A044000ED7872 /* TagVC.swift in Sources */,
 				FBB28624214AFAA800F722C1 /* ProductTagCell.swift in Sources */,
 				FBE6DD33214A044000ED7872 /* AppDelegate.swift in Sources */,

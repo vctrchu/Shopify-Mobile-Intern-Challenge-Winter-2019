@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ProductTagCell: UITableViewCell {
 
@@ -14,17 +15,17 @@ class ProductTagCell: UITableViewCell {
     @IBOutlet weak var productNameLabel: UILabel!
     @IBOutlet weak var productInventoryLabel: UILabel!
     
-    func configureCell(productImage: String, productNameLabel: String, productIventoryLabel: String) {
-        
-        //self.productImage =
+    func configureCell(productImageURL: String, productNameLabel: String, productIventoryLabel: String) {
         self.productNameLabel.text = productNameLabel
-        self.productInventoryLabel.text = productIventoryLabel
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        self.productInventoryLabel.text = "Total Inventory Count: " + productIventoryLabel
+        
+        Alamofire.request(productImageURL).responseData { (response) in
+            if let image = response.result.value {
+                let uiimage = UIImage(data: image)
+                self.productImage.image = uiimage
+            }
+        }
+        
     }
 
 }
