@@ -27,11 +27,11 @@ class ProductTagVC: UIViewController {
         Alamofire.request(URL).responseJSON { (response) in
             
             if response.result.isSuccess {
-                if let jsonArray = response.result.value {
+                if let result = response.result.value {
                     
-                    let jsonObject : Dictionary =  jsonArray as! Dictionary <String, Any>
-                    if let productObject : Array = jsonObject["products"] as? Array <Dictionary <String, Any>> {
-                        for product in productObject {
+                    let jsonDict : Dictionary =  result as! Dictionary <String, Any>
+                    if let productArray : Array = jsonDict["products"] as? Array <Dictionary <String, Any>> {
+                        for product in productArray {
                             
                             let tags = product["tags"] as! String
                             let productTitle = product["title"] as! String
@@ -42,11 +42,11 @@ class ProductTagVC: UIViewController {
                                 inventoryCount += variant["inventory_quantity"] as! Int
                             }
                             
-                            let image = product["image"] as! Dictionary <String, Any>
-                            let imageURL = image["src"] as! String
+                            let productImage = product["image"] as! Dictionary <String, Any>
+                            let imageURL = productImage["src"] as! String
                             
-                            let tagsArr = tags.components(separatedBy: ", ")
-                            if tagsArr.contains(self.tag) {
+                            let tagsArray = tags.components(separatedBy: ", ")
+                            if tagsArray.contains(self.tag) {
                                 let tempProduct = Product(productTitle: productTitle, inventoryCount: String(inventoryCount), imageURL: imageURL)
                                 self.productsArray.append(tempProduct)
                             }
@@ -57,7 +57,7 @@ class ProductTagVC: UIViewController {
                 }
             }
             else {
-                print("error")
+                print("Error \(String(describing: response.result.error))")
             }
         }
     }

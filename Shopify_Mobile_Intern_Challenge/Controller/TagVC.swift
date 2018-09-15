@@ -25,14 +25,14 @@ class TagVC: UIViewController {
         Alamofire.request(URL).responseJSON { (response) in
             
             if response.result.isSuccess {
-                if let jsonArray = response.result.value {
+                if let result = response.result.value {
 
-                    let jsonObject : Dictionary =  jsonArray as! Dictionary <String, Any>
-                    if let productObject : Array = jsonObject["products"] as? Array <Dictionary <String, Any>> {
-                        for product in productObject {
+                    let jsonDict : Dictionary =  result as! Dictionary <String, Any>
+                    if let productArray : Array = jsonDict["products"] as? Array <Dictionary <String, Any>> {
+                        for product in productArray {
                             let tags = product["tags"] as! String
-                            let tagsArr = tags.components(separatedBy: ", ")
-                            for tag in tagsArr {
+                            let tagsArray = tags.components(separatedBy: ", ")
+                            for tag in tagsArray {
                                 if !self.tagArray.contains(tag) {
                                     self.tagArray.append(tag)
                                 }
@@ -44,7 +44,7 @@ class TagVC: UIViewController {
                 }
             }
             else {
-                print("error")
+                print("Error \(String(describing: response.result.error))")
             }
         }
     }
